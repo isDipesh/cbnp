@@ -9,6 +9,7 @@ uv pip install "numpy<2"
 uv pip install tensorboard
 uv pip install datasets
 uv pip install "transformers[torch]"
+uv pip install torchcodec
 ```
 
 # Usage
