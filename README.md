@@ -1,6 +1,13 @@
 # WIP Fineuning repo for chatterbox tts
 Use the provided finetuning scripts to finetune chatterbox t3 and s3/flow model.
 
+## Install dependencies
+```
+uv sync
+uv pip install -U ml_dtypes
+uv pip install "numpy<2"
+```
+
 # Usage
 
 ```
