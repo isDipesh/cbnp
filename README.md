@@ -6,6 +6,9 @@ Use the provided finetuning scripts to finetune chatterbox t3 and s3/flow model.
 uv sync
 uv pip install -U ml_dtypes
 uv pip install "numpy<2"
+uv pip install tensorboard
+uv pip install datasets
+uv pip install "transformers[torch]"
 ```
 
 # Usage
