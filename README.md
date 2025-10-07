@@ -9,6 +9,8 @@ uv pip install "numpy<2"
 uv pip install tensorboard
 uv pip install datasets
 uv pip install "transformers[torch]"
+uv pip install torch==2.8.0 torchvision torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+uv pip install ffmpeg
 uv pip install torchcodec
 ```
 
@@ -22,7 +24,7 @@ cd src
 python finetune_t3.py \
 --output_dir ./checkpoints/chatterbox_finetuned_yodas \
 --model_name_or_path ResembleAI/chatterbox \
---dataset_name MrDragonFox/DE_Emilia_Yodas_680h \
+--dataset_name amitpant7/nepali-speech-to-text \
 --train_split_name train \
 --eval_split_size 0.0002 \
 --num_train_epochs 1 \
@@ -43,7 +45,7 @@ python finetune_t3.py \
 --dataloader_pin_memory False \
 --eval_on_start True \
 --label_names labels_speech \
---text_column_name text_scribe
+--text_column_name transcription
 ```
 
 

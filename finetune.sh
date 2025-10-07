@@ -17,9 +17,9 @@ python src/finetune_t3.py \
 --save_total_limit 4 \
 --fp16 True \
 --report_to tensorboard \
---dataloader_num_workers 8 \
+--dataloader_num_workers 4 \
 --do_train --do_eval \
 --dataloader_pin_memory False \
 --eval_on_start True \
 --label_names labels_speech \
---text_column_name text_scribe
+--text_column_name transcription

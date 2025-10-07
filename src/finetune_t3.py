@@ -528,7 +528,6 @@ def main():
                                             is_hf_format_train
                                             )
 
-
     eval_dataset = None
     if eval_hf_dataset and training_args.do_eval:
         eval_dataset = SpeechFineTuningDataset(data_args,
