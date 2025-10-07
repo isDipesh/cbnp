@@ -185,11 +185,8 @@ class SpeechFineTuningDataset(Dataset):
 
             if isinstance(audio_data, str):
                 wav_array, original_sr = librosa.load(audio_data, sr=None, mono=True)
-            elif (
-                isinstance(audio_data, dict)
-                and "array" in audio_data
-                and "sampling_rate" in audio_data
-            ):
+            # elif "array" in audio_data and "sampling_rate" in audio_data:
+            elif hasattr(audio_data, "metadata"):
                 wav_array = audio_data["array"]
                 original_sr = audio_data["sampling_rate"]
             else:
@@ -646,6 +643,9 @@ def main():
             verification_mode=verification_mode,
             # trust_remote_code=True # If dataset script requires it
         )
+        # raw_datasets_loaded = raw_datasets_loaded.cast_column(
+        #     "audio", Audio(sampling_rate=S3_SR)
+        # )
         if data_args.train_split_name not in raw_datasets_loaded:
             raise ValueError(
                 f"Train split '{data_args.train_split_name}' not found. Available: {list(raw_datasets_loaded.keys())}"
